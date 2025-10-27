@@ -1,0 +1,191 @@
+
+
+
+.contactWrapper {
+  min-height: 100vh;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  // background: green;
+  width: 100%;
+  // overflow:hidden;
+  padding: 20px; // keeps card from touching edges
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   background: #ebf0fa;
+  // background: yellow;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1000px;   // ✅ keeps it neat on large screens
+  width: 100%;         // ✅ always full width
+  flex-wrap: wrap;
+  gap: 20px;
+  // padding:50p8
+  padding-top:50px;
+  padding-bottom: 50px;
+  margin-right:8px;
+}
+
+.lottieWrapper {
+  flex: 1;
+  max-width: 400px;   // ✅ limit on desktop
+  min-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.formSection {
+  flex: 1;
+  padding: 20px;
+  min-width: 280px;
+  width: 100%;        // ✅ makes form always full width
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 90%;        // ✅ form stretches full width
+
+  input,
+  textarea,
+  button {
+    width: 100%;      // ✅ inputs & button full width
+    padding: 14px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+  input,
+  textarea {
+    border: 1px solid #9b9999;
+    transition: 0.3s;
+    outline: none;
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+      
+    }
+  }
+
+  textarea {
+    resize: none;
+    min-height: 120px;
+  }
+
+  button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #0056b3;
+    }
+  }
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .contactWrapper{
+    width:100%;
+  }
+  .card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+     max-width: 100%;   // ✅ remove 1000px restriction
+    width: 100%;       // ✅ full width
+    gap: 10px;
+    margin-right:15px;
+  }
+    .lottieWrapper {
+    max-width: 100%;   // ✅ stop overflow
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .formSection {
+    // min-width: 50px;
+     width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Extra small screens - less than 450px */
+@media (max-width: 450px) {
+  .contactWrapper{
+    width:100%;
+    padding-right:0px;
+  }
+  .card {
+    flex-direction: column;
+    gap: 15px;
+    margin-right:15px;
+  }
+
+  .lottieWrapper {
+    max-width: 100%;  // ✅ take full width
+    height: 200px;    // ✅ limit height for tiny screens
+   height: 180px;
+  }
+
+  .formSection {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .formSection input,
+  .formSection textarea,
+  .formSection button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+
+.status {
+  margin-top: 10px;
+  font-size: 15px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #e63946;
+  font-size: 0.8rem;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.error.hidden {
+  opacity: 0;
+}
+
+
+
+
